@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cover for table {{ id }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-row class="input-row">
+  <ion-label>Patrons</ion-label>
+  <ion-input [(ngModel)]="cover"></ion-input>
+</ion-row>
+
+<ion-row class="button-row">
+  <ion-button fill="outline" (click)="modal.dismiss()">Cancel</ion-button>
+  <ion-button (click)="accept(cover)" [disabled]="!validate(cover)">accept</ion-button>
+</ion-row>

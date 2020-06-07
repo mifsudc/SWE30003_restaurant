@@ -1,0 +1,29 @@
+.reservation-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ion-card {
+  width: calc(100% / 3);
+  color: white;
+  padding-bottom: 2em;
+  
+  ion-card-header {
+    align-items: center;
+  }
+  
+  ion-card-content {
+    padding-left: 2em;
+    font-size: 1.2em;
+  
+    ion-row {
+      padding-top: 0.4em;
+    }
+  }
+  
+  ion-title {
+    padding: 0.5em 1em 0 1em;
+    color: white;
+    font-size: 1.6em;
+  }
+}

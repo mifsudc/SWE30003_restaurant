@@ -1,0 +1,13 @@
+ion-input, ion-datetime, ion-textarea {
+  border-radius: 3px;
+  border: 2px solid #ab323e;
+}
+
+ion-row {
+  align-items: center;
+}
+
+ion-input, ion-textarea {
+  margin-right: 16px;
+  --padding-start: 16px;
+}

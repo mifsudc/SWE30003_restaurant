@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Table {{ tableId }} total: {{ total }}
+    </ion-title>
+  </ion-toolbar>
+  <ion-icon slot="end" name="close" (click)="dismiss()"></ion-icon>
+</ion-header>
+<ion-card-content class="ion-align-items-center">
+  <ion-button expand="block" (click)="print(order)">Print invoice</ion-button>
+  <ion-button expand="block" (click)="process(order)">Process payment</ion-button>
+</ion-card-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Reservations</ion-title>
+    <ion-button slot="end" fill="outline" (click)="add()" style="margin-right: 1em;">new reservation</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="reservation-wrapper">
+    <ion-card *ngFor="let reservation of reservations">
+      <ion-card-header>
+        <ion-title>
+          <ion-row class="ion-justify-content-between">
+            <div>
+              {{ reservation.name }}
+            </div>
+            <div>
+              {{ reservation.time }}
+            </div>
+          </ion-row>
+        </ion-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row class="ion-align-items-center">
+          Patrons: {{ reservation.cover }}
+          <ion-icon name="person"></ion-icon>
+        </ion-row>
+        <ion-row>Contact: {{ reservation.contact }}</ion-row>
+        <ion-row>Notes: {{ reservation.notes || 'None' }}</ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

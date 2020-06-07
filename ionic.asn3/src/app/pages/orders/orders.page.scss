@@ -1,0 +1,50 @@
+.order-panel {
+  overflow-x: scroll;
+  height: 100%;
+}
+.order-panel::-webkit-scrollbar {
+  height: 8px;
+}
+.order-panel::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #333;
+}
+.order-panel::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #666;
+}
+
+.order-wrapper {
+  display: flex;
+  width: fit-content;
+  height: calc(100% - 20px);
+
+}
+
+ion-card {
+  color: white;
+  width: 300px;
+  overflow-y: scroll;
+  height: 100%;
+  -ms-overflow-style: none;
+
+  ion-card-header {
+    color: white;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  ion-card-content{
+    
+    font-size: 1.5em;
+    ion-row {
+      margin-top: 0.5em;
+    }
+  }
+}
+
+ion-card::-webkit-scrollbar {
+  display: none;
+}

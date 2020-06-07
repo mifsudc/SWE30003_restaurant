@@ -1,0 +1,25 @@
+.table-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 25px;
+  color: #333;
+}
+
+.table-cell {
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 50px;
+  height: 100px;
+  width: 100px;
+}
+
+.table-occupied {
+  background: lightgreen;
+}
+
+.table-empty {
+  background: lightskyblue;
+}

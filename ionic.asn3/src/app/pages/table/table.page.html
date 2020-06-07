@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Table {{ table.id }}</ion-title>
+    <ion-button slot="end" fill="outline" (click)="reset()" style="margin-right: 1em">Reset Table</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <!-- ORDER -->
+    <ion-col class="order-panel">
+      <div class="order-wrapper">
+        <ion-row class="header">
+          <ion-title>
+            ORDERS
+          </ion-title>
+          <ion-button (click)="order.send(table.id, order.state)" fill="outline" [disabled]="!order.state.length">send order</ion-button>
+        </ion-row>
+        <ion-row class="order-item" *ngFor="let orderItem of order.state">
+          <div>{{ orderItem.quantity }}x {{ orderItem.item.name }}</div>
+          <ion-row class="ion-align-items-center">
+            ${{ orderItem.item.price }}
+            <ion-button style="margin-left: 8px;" fill="outline" (click)="order.remove(orderItem.item)"><ion-icon name="remove" size="small"></ion-icon></ion-button>
+            <ion-button fill="outline" (click)="order.add(orderItem.item)"><ion-icon name="add" size="small"></ion-icon></ion-button>
+          </ion-row>
+        </ion-row>
+
+        <hr style="border-bottom: 3px solid #666" />
+
+        <ion-row class="order-item" *ngFor="let orderItem of table.orders">
+          <div>{{ orderItem.quantity }}x {{ orderItem.item.name }}</div>
+          
+          <ion-row class="ion-align-items-center">
+            ${{ orderItem.item.price }}
+          </ion-row>
+        </ion-row>
+
+        <ion-row class="payment-row">
+          <ion-button fill="outline" (click)="order.pay()">PAYMENT</ion-button>
+          Total: ${{ order.total() }}
+        </ion-row>
+      </div>
+    </ion-col>
+    <!-- /ORDER -->
+  
+    <!-- MENU -->
+    <ion-col>
+      <ion-row class="header">
+        <ion-title>
+          MENU
+        </ion-title>
+        <ion-row class="ion-align-items-center">
+          {{ table.seatingCover }}&nbsp;<ion-icon name="person"></ion-icon>
+        </ion-row>
+      </ion-row>
+  
+      <ion-row>
+        <ion-segment [(ngModel)]="section">
+          <ion-segment-button value="Chicken">
+            <ion-label>Chicken</ion-label>
+          </ion-segment-button>
+  
+          <ion-segment-button value="Beef">
+            <ion-label>Beef</ion-label>
+          </ion-segment-button>
+  
+          <ion-segment-button value="Vegetarian">
+            <ion-label>Vegetarian</ion-label>
+          </ion-segment-button>
+  
+          <ion-segment-button value="Drinks">
+            <ion-label>Drinks</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-row>
+  
+      <ion-row>
+        <div
+          *ngFor="let item of menu[section]"
+          class="menu-item"
+          (click)="order.add(item)">
+          <div>{{ item.name }}</div>
+          <div>${{ item.price }}</div>
+        </div>
+      </ion-row>
+    </ion-col>
+    <!-- /MENU -->
+  </ion-row>
+</ion-content>

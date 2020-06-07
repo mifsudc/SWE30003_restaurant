@@ -1,0 +1,19 @@
+.button-row {
+  margin-bottom: 16px;
+
+  ion-button {
+    margin-left: 16px;
+  }
+}
+
+.input-row {
+  align-items: center;
+  padding: 16px;
+
+  ion-input {
+    border-radius: 3px;
+    border: 2px solid #ab323e;
+    max-width: 50%;
+    margin-left: 16px;
+  }
+}

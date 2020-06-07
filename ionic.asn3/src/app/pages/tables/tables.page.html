@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Floor Map</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="table-wrapper">
+    <div
+      *ngFor="let table of tables"
+      class="table-cell"
+      (click)="displayOrInitTable(table)"
+      [ngClass]="table.seatingCover ? 'table-occupied' : 'table-empty' ">
+      {{ table.id }}
+    </div>
+  </div>
+</ion-content>

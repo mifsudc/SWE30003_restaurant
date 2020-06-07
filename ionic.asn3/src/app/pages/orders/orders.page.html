@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="order-panel">
+    <div class="order-wrapper">
+      <ion-card *ngFor="let order of orders">
+        <ion-card-header>
+          Table {{ order.tableId }} <ion-button color="danger" (click)="serve(order)">Serve</ion-button>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row *ngFor="let item of order.itemList">
+            {{ item.quantity }}x {{ item.item.name }}
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
